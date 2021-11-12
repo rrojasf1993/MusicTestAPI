@@ -1,0 +1,12 @@
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\bin\Debug\net5.0\MusicTestAPI.Services.deps.json
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\bin\Debug\net5.0\MusicTestAPI.Services.dll
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\bin\Debug\net5.0\ref\MusicTestAPI.Services.dll
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\bin\Debug\net5.0\MusicTestAPI.Services.pdb
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\obj\Debug\net5.0\MusicTestAPI.Services.csprojAssemblyReference.cache
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\obj\Debug\net5.0\MusicTestAPI.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\obj\Debug\net5.0\MusicTestAPI.Services.AssemblyInfoInputs.cache
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\obj\Debug\net5.0\MusicTestAPI.Services.AssemblyInfo.cs
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\obj\Debug\net5.0\MusicTestAPI.Services.csproj.CoreCompileInputs.cache
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\obj\Debug\net5.0\MusicTestAPI.Services.dll
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\obj\Debug\net5.0\ref\MusicTestAPI.Services.dll
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\obj\Debug\net5.0\MusicTestAPI.Services.pdb
