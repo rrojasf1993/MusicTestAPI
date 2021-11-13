@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using MusicTestAPI.Data.Interfaces;
+using MusicTestAPI.Data;
 
 namespace MusicTestAPI.Web
 {
@@ -34,6 +36,7 @@ namespace MusicTestAPI.Web
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MusicTestAPI.Web", Version = "v1" });
             });
             services.AddDbContext<MusicContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MusicContext"), b => b.MigrationsAssembly("MusicTestAPI.Data")));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

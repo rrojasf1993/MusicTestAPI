@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "MusicTestAPI.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MusicTestAPI.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MusicTestAPI.Common.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MusicTestAPI.Common/1.0.0": {
+      "type": "project",
+      "path": "../MusicTestAPI.Common/MusicTestAPI.Common.csproj",
+      "msbuildProject": "../MusicTestAPI.Common/MusicTestAPI.Common.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "MusicTestAPI.Common >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\rober\\.nuget\\packages\\": {},
@@ -16,11 +35,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rober\\Source\\Repos\\MusicTestAPI\\MusicTestAPI.Services\\MusicTestAPI.Services.csproj",
+      "projectUniqueName": "C:\\Users\\rober\\source\\repos\\MusicTestAPI\\MusicTestAPI.Services\\MusicTestAPI.Services.csproj",
       "projectName": "MusicTestAPI.Services",
-      "projectPath": "C:\\Users\\rober\\Source\\Repos\\MusicTestAPI\\MusicTestAPI.Services\\MusicTestAPI.Services.csproj",
+      "projectPath": "C:\\Users\\rober\\source\\repos\\MusicTestAPI\\MusicTestAPI.Services\\MusicTestAPI.Services.csproj",
       "packagesPath": "C:\\Users\\rober\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rober\\Source\\Repos\\MusicTestAPI\\MusicTestAPI.Services\\obj\\",
+      "outputPath": "C:\\Users\\rober\\source\\repos\\MusicTestAPI\\MusicTestAPI.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -43,7 +62,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\rober\\source\\repos\\MusicTestAPI\\MusicTestAPI.Common\\MusicTestAPI.Common.csproj": {
+              "projectPath": "C:\\Users\\rober\\source\\repos\\MusicTestAPI\\MusicTestAPI.Common\\MusicTestAPI.Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -61,6 +61,15 @@ namespace MusicTestAPI.Data.Entities
             set { _isPublic = value; }
         }
 
+        private List<Song> _songs;
+
+        public List<Song> Songs
+        {
+            get { return _songs; }
+            set { _songs = value; }
+        }
+
+
 
 
 

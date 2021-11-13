@@ -70,6 +70,38 @@ namespace MusicTestAPI.Data.Migrations
                     b.ToTable("Authors");
                 });
 
+            modelBuilder.Entity("MusicTestAPI.Data.Entities.Song", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AlbumId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CreatorId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Duration")
+                        .HasColumnType("float");
+
+                    b.Property<bool>("IsPublic")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlbumId");
+
+                    b.HasIndex("CreatorId");
+
+                    b.ToTable("Song");
+                });
+
             modelBuilder.Entity("MusicTestAPI.Data.Entities.User", b =>
                 {
                     b.Property<int>("Id")
@@ -114,9 +146,24 @@ namespace MusicTestAPI.Data.Migrations
                         .HasForeignKey("AlbumId");
                 });
 
+            modelBuilder.Entity("MusicTestAPI.Data.Entities.Song", b =>
+                {
+                    b.HasOne("MusicTestAPI.Data.Entities.Album", null)
+                        .WithMany("Songs")
+                        .HasForeignKey("AlbumId");
+
+                    b.HasOne("MusicTestAPI.Data.Entities.User", "Creator")
+                        .WithMany()
+                        .HasForeignKey("CreatorId");
+
+                    b.Navigation("Creator");
+                });
+
             modelBuilder.Entity("MusicTestAPI.Data.Entities.Album", b =>
                 {
                     b.Navigation("Authors");
+
+                    b.Navigation("Songs");
                 });
 #pragma warning restore 612, 618
         }
