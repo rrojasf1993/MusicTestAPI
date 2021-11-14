@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace MusicTestAPI.Common.DataTransferObjects
 {
-    public class Author:BaseMusicDTO
+    public class Like
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string LastName { get; set; }
+        public User User { get; set; }
     }
 }

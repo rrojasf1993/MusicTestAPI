@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace MusicTestAPI.Data.Entities
 {
-    public class Song:BaseMusicEntity
+    public class Like
     {
         private int _id;
-        [Key]
+[Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id
         {
@@ -19,21 +19,16 @@ namespace MusicTestAPI.Data.Entities
             set { _id = value; }
         }
 
-       
-        private string _name;
+        private User _userThatLiked;
         [Required]
-        public string Name
+        public User User
         {
-            get { return _name; }
-            set { _name = value; }
+            get { return _userThatLiked; }
+            set { _userThatLiked = value; }
         }
 
-        private double _duration;
-        [Required]
-        public double Duration
-        {
-            get { return _duration; }
-            set { _duration = value; }
-        }
+       
+
+
     }
 }

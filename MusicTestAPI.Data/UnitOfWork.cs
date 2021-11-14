@@ -24,6 +24,9 @@ namespace MusicTestAPI.Data
         private IRepository<User> _users;
         public IRepository<User> Users { get => _users ?? (_users = new GenericRepository<User>(_context)); }
 
+        private IRepository<Like> _likes;
+        public IRepository<Like> Likes { get => _likes ?? (_likes = new GenericRepository<Like>(_context)); }
+
         private MusicContext _conntext;
 
         public MusicContext Context

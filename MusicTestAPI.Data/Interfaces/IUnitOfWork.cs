@@ -13,6 +13,7 @@ namespace MusicTestAPI.Data.Interfaces
         public IRepository<Author> Authors { get;  }
         public IRepository<Song> Songs { get;  }
         public IRepository<User> Users { get;  }
+        public IRepository<Like> Likes { get; }
         public MusicContext Context { get; set; }
         public void SaveChanges();
     }

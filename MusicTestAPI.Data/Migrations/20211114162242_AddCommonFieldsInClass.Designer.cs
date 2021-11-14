@@ -3,14 +3,16 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MusicTestAPI.Data.Migrations
 {
     [DbContext(typeof(MusicContext))]
-    partial class MusicContextModelSnapshot : ModelSnapshot
+    [Migration("20211114162242_AddCommonFieldsInClass")]
+    partial class AddCommonFieldsInClass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,10 +27,6 @@ namespace MusicTestAPI.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Band")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int?>("CreatorId")
                         .HasColumnType("int");
 
@@ -39,9 +37,8 @@ namespace MusicTestAPI.Data.Migrations
                     b.Property<bool>("IsPublic")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Likes")
+                        .HasColumnType("int");
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
@@ -78,33 +75,6 @@ namespace MusicTestAPI.Data.Migrations
                     b.ToTable("Authors");
                 });
 
-            modelBuilder.Entity("MusicTestAPI.Data.Entities.Like", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("AlbumId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SongId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AlbumId");
-
-                    b.HasIndex("SongId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Likes");
-                });
-
             modelBuilder.Entity("MusicTestAPI.Data.Entities.Song", b =>
                 {
                     b.Property<int>("Id")
@@ -123,6 +93,9 @@ namespace MusicTestAPI.Data.Migrations
 
                     b.Property<bool>("IsPublic")
                         .HasColumnType("bit");
+
+                    b.Property<int>("Likes")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -181,23 +154,6 @@ namespace MusicTestAPI.Data.Migrations
                         .HasForeignKey("AlbumId");
                 });
 
-            modelBuilder.Entity("MusicTestAPI.Data.Entities.Like", b =>
-                {
-                    b.HasOne("MusicTestAPI.Data.Entities.Album", null)
-                        .WithMany("Likes")
-                        .HasForeignKey("AlbumId");
-
-                    b.HasOne("MusicTestAPI.Data.Entities.Song", null)
-                        .WithMany("Likes")
-                        .HasForeignKey("SongId");
-
-                    b.HasOne("MusicTestAPI.Data.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("MusicTestAPI.Data.Entities.Song", b =>
                 {
                     b.HasOne("MusicTestAPI.Data.Entities.Album", null)
@@ -215,14 +171,7 @@ namespace MusicTestAPI.Data.Migrations
                 {
                     b.Navigation("Authors");
 
-                    b.Navigation("Likes");
-
                     b.Navigation("Songs");
-                });
-
-            modelBuilder.Entity("MusicTestAPI.Data.Entities.Song", b =>
-                {
-                    b.Navigation("Likes");
                 });
 #pragma warning restore 612, 618
         }

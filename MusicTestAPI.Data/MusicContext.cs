@@ -13,5 +13,9 @@ public class MusicContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Album> Albums { get; set; }
     public DbSet<Author> Authors { get; set; }
+    public DbSet<Like> Likes { get; set; }
+
+
+
 
 }

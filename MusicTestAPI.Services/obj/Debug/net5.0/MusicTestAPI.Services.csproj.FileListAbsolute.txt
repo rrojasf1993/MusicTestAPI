@@ -10,3 +10,8 @@ C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\obj\Debug\net5.0\
 C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\obj\Debug\net5.0\MusicTestAPI.Services.dll
 C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\obj\Debug\net5.0\ref\MusicTestAPI.Services.dll
 C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\obj\Debug\net5.0\MusicTestAPI.Services.pdb
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\bin\Debug\net5.0\MusicTestAPI.Common.dll
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\bin\Debug\net5.0\MusicTestAPI.Data.dll
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\bin\Debug\net5.0\MusicTestAPI.Common.pdb
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\bin\Debug\net5.0\MusicTestAPI.Data.pdb
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Services\obj\Debug\net5.0\MusicTestAPI.Services.csproj.CopyComplete

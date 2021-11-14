@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MusicTestAPI.Data.Entities
 {
-    public class Album
+    public class Album:BaseMusicEntity
     {
         private int _id;
 
@@ -45,22 +45,7 @@ namespace MusicTestAPI.Data.Entities
             set { _genre = value; }
         }
 
-        private User _creator;
-        [Required]
-        public User Creator
-        {
-            get { return _creator; }
-            set { _creator = value; }
-        }
-
-        private bool _isPublic;
-        [Required]
-        public bool IsPublic
-        {
-            get { return _isPublic; }
-            set { _isPublic = value; }
-        }
-
+       
         private List<Song> _songs;
 
         public List<Song> Songs
@@ -69,8 +54,21 @@ namespace MusicTestAPI.Data.Entities
             set { _songs = value; }
         }
 
+        private string _name;
+        [Required]
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
 
-
+        private string _band;
+        [Required]
+        public string Band
+        {
+            get { return _band; }
+            set { _band = value; }
+        }
 
 
     }
