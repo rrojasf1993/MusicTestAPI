@@ -1,4 +1,5 @@
-﻿using MusicTestAPI.Common;
+﻿using AutoMapper;
+using MusicTestAPI.Common;
 using MusicTestAPI.Common.DataTransferObjects;
 using MusicTestAPI.Data.Interfaces;
 using System;
@@ -11,19 +12,20 @@ namespace MusicTestAPI.Services
 {
     public class AlbumService : BaseService
     {
-        public AlbumService(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public AlbumService(IUnitOfWork unitOfWork, IMapper mapper) : base(unitOfWork)
         {
-            ConfigureServiceMappings();
+            this.EntityMapper = mapper;
         }
 
         public override OperationResult AddLike(int itemIdToLike, Like likeData)
         {
             OperationResult result = new OperationResult();
-            var albumToLike = this.UnitOfWrk.Albums.Get((a=>a.IsPublic && a.Id== itemIdToLike)).FirstOrDefault();
+            var albumToLike = this.UnitOfWrk.Albums.Get((a=>a.IsPublic && a.Id== itemIdToLike), includeProperties: "Songs,Authors,Creator,Likes").FirstOrDefault();
             if(albumToLike!=null)
             {
                 Data.Entities.Like likeToAdd = new Data.Entities.Like();
                 this.EntityMapper.Map(likeData, likeToAdd);
+                likeToAdd.User = this.UnitOfWrk.Users.GetByID(likeData.User.Id);
                 albumToLike.Likes.Add(likeToAdd);
                 this.UnitOfWrk.Albums.Update(albumToLike);
                 this.UnitOfWrk.SaveChanges();
@@ -38,11 +40,7 @@ namespace MusicTestAPI.Services
             return result;
         }
 
-        public override void ConfigureServiceMappings()
-        {
-            
-        }
-
+     
         public override OperationResult Create(BaseMusicDTO albumToCreate)
         {
             OperationResult result = new OperationResult();
@@ -50,6 +48,10 @@ namespace MusicTestAPI.Services
             { 
                 Data.Entities.Album albumToInsert = new Data.Entities.Album();
                 this.EntityMapper.Map(albumToCreate, albumToInsert);
+
+                var creator=this.UnitOfWrk.Users.Get((c)=>c.Email==albumToInsert.Creator.Email).FirstOrDefault();
+                albumToInsert.Creator = creator;
+
                 this.UnitOfWrk.Albums.Insert(albumToInsert);
                 this.UnitOfWrk.SaveChanges();
                 result.IsSuccesfull = true;
@@ -69,9 +71,22 @@ namespace MusicTestAPI.Services
             OperationResult result = new OperationResult();
             try
             {
-                var albumToDelete = this.UnitOfWrk.Albums.Get((a => a.IsPublic == false && a.Id == itemIdToDelete && a.Creator.Id == userId)).FirstOrDefault();
+                var albumToDelete = this.UnitOfWrk.Albums.Get((a => a.IsPublic == false && a.Id == itemIdToDelete && a.Creator.Id == userId), includeProperties: "Songs,Authors,Creator,Likes").FirstOrDefault();
                 if (albumToDelete != null)
                 {
+                    var songsToDelete = albumToDelete.Songs;
+                    if(songsToDelete.Any())
+                    {
+                        songsToDelete.ForEach(s => this.UnitOfWrk.Songs.Delete(s.Id));
+                    }
+
+                    var likesToDelete= albumToDelete.Likes;
+                    if (likesToDelete.Any())
+                    {
+                        likesToDelete.ForEach(s => this.UnitOfWrk.Likes.Delete(s.Id));
+                    }
+
+
                     this.UnitOfWrk.Albums.Delete(itemIdToDelete);
                     this.UnitOfWrk.SaveChanges();
                     result.IsSuccesfull = true;
@@ -97,13 +112,25 @@ namespace MusicTestAPI.Services
             OperationResult result = new OperationResult();
             try
             {
-                var itemsToDelete = this.UnitOfWrk.Albums.Get((a => a.IsPublic == false && a.Creator.Id == userId));
+                var itemsToDelete = this.UnitOfWrk.Albums.Get((a => a.IsPublic == false && a.Creator.Id == userId), includeProperties: "Songs,Authors,Creator,Likes");
                 if (itemsToDelete.Any())
                 {
                     foreach (var item in itemsToDelete)
                     {
+                        var songsToDelete = item.Songs;
+                        if (songsToDelete.Any())
+                        {
+                            songsToDelete.ForEach(s => this.UnitOfWrk.Songs.Delete(s.Id));
+                        }
+
+                        var likesToDelete = item.Likes;
+                        if (likesToDelete.Any())
+                        {
+                            likesToDelete.ForEach(s => this.UnitOfWrk.Likes.Delete(s.Id));
+                        }
                         this.UnitOfWrk.Albums.Delete(item);
                     }
+                    this.UnitOfWrk.SaveChanges();
                     result.IsSuccesfull = true;
                     result.Result = OpCodes.Succesfull;
                 }
@@ -127,7 +154,7 @@ namespace MusicTestAPI.Services
             OperationResult result = new OperationResult();
             try
             {
-                var items = this.UnitOfWrk.Albums.Get((a => a.IsPublic)).ToList();
+                var items = this.UnitOfWrk.Albums.Get((a => a.IsPublic), includeProperties: "Songs,Authors,Creator,Likes").ToList();
                 if (items.Any())
                 {
                     result.Result = this.EntityMapper.Map(items, typeof(List<Data.Entities.Album>), typeof(List<Common.DataTransferObjects.Album>));
@@ -140,6 +167,7 @@ namespace MusicTestAPI.Services
                 }
             }
             catch (Exception exc)
+            
             {
                 result.IsSuccesfull = false;
                 result.ErrorMessage = $"{exc.Message}\n{exc.StackTrace}";
@@ -153,7 +181,7 @@ namespace MusicTestAPI.Services
             OperationResult result = new OperationResult();
             try
             {
-                var items = this.UnitOfWrk.Albums.Get((a => a.Creator.Id==userId )).ToList();
+                var items = this.UnitOfWrk.Albums.Get((a => a.Creator.Id==userId ), includeProperties: "Songs,Authors,Creator,Likes").ToList();
                 if (items.Any())
                 {
                     result.Result = this.EntityMapper.Map(items, typeof(List<Data.Entities.Album>), typeof(List<Common.DataTransferObjects.Album>));
@@ -174,12 +202,14 @@ namespace MusicTestAPI.Services
             return result;
         }
 
+      
+
         public override OperationResult GetLikedItems(int userId)
         {
             OperationResult result = new OperationResult();
             try
             {
-                var items = this.UnitOfWrk.Albums.Get((a => a.Likes.Any((l)=>l.User.Id==userId))).ToList();
+                var items = this.UnitOfWrk.Albums.Get((a => a.Likes.Any((l)=>l.User.Id==userId)), includeProperties: "Songs,Authors,Creator,Likes").ToList();
                 if (items.Any())
                 {
                     result.Result = this.EntityMapper.Map(items, typeof(List<Data.Entities.Album>), typeof(List<Common.DataTransferObjects.Album>));
@@ -211,11 +241,11 @@ namespace MusicTestAPI.Services
             {
                 Data.Entities.Album albumToUpdate = new Data.Entities.Album();
                 this.EntityMapper.Map(updateData, albumToUpdate);
-                var album = this.UnitOfWrk.Albums.Get((a => a.IsPublic == false && a.Id == updateData.Id)).FirstOrDefault();
+                var album = this.UnitOfWrk.Albums.Get((a => a.IsPublic == false && a.Id == updateData.Id), includeProperties: "Songs,Authors,Creator,Likes").FirstOrDefault();
                 if (album != null)
-                {
-                   album = albumToUpdate;
-                    this.UnitOfWrk.Albums.Update(album);
+                {  
+                   this.UnitOfWrk.Albums.Update(albumToUpdate);
+                   this.UnitOfWrk.SaveChanges();
                 }
                 else
                 {

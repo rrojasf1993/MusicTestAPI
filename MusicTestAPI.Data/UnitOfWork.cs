@@ -10,7 +10,7 @@ namespace MusicTestAPI.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private MusicContext _context;
+       
 
         private IRepository<Album> _albums;
         public IRepository<Album> Albums { get => _albums ?? (_albums = new GenericRepository<Album>(_context)); }
@@ -27,14 +27,18 @@ namespace MusicTestAPI.Data
         private IRepository<Like> _likes;
         public IRepository<Like> Likes { get => _likes ?? (_likes = new GenericRepository<Like>(_context)); }
 
-        private MusicContext _conntext;
+        private MusicContext _context;
 
         public MusicContext Context
         {
-            get { return _conntext; }
-            set { _conntext = value; }
+            get { return _context; }
+            set { _context = value; }
         }
 
+        public UnitOfWork(MusicContext ctx)
+        {
+            this.Context = ctx;
+        }
 
         public void SaveChanges()
         {

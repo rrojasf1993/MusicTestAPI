@@ -67,7 +67,10 @@ namespace MusicTestAPI.Data
 
         public void Update(TEntity entityToUpdate)
         {
-            dbSet.Attach(entityToUpdate);
+            if (this._context.Entry(entityToUpdate).State == EntityState.Detached)
+            {
+                dbSet.Attach(entityToUpdate);
+            }
             this._context.Entry(entityToUpdate).State = EntityState.Modified;
         }
     }

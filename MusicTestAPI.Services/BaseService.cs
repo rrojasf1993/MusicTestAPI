@@ -16,7 +16,6 @@ namespace MusicTestAPI.Services
         public IUnitOfWork UnitOfWrk { get ; set; }
 
         public abstract OperationResult  AddLike(int itemIdToLike, Like likeData);
-        public abstract void ConfigureServiceMappings();
         public abstract OperationResult Create(BaseMusicDTO itemToCreate);
         public abstract OperationResult Delete(int itemIdToDelete,int userId);
         public abstract OperationResult DeleteAll(int userId);

@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicTestAPI.Services", "..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicTestAPI.Web", "..\MusicTestAPI.Web\MusicTestAPI.Web.csproj", "{5FEA9133-462A-4418-8DDC-6E4FA8C45711}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicTestAPI.Tests", "MusicTestAPI.Tests\MusicTestAPI.Tests.csproj", "{6385A96C-D979-4407-9C76-8919A01668BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5FEA9133-462A-4418-8DDC-6E4FA8C45711}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FEA9133-462A-4418-8DDC-6E4FA8C45711}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FEA9133-462A-4418-8DDC-6E4FA8C45711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6385A96C-D979-4407-9C76-8919A01668BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6385A96C-D979-4407-9C76-8919A01668BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6385A96C-D979-4407-9C76-8919A01668BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6385A96C-D979-4407-9C76-8919A01668BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

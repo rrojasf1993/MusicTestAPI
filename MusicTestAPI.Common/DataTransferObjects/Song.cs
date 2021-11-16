@@ -9,7 +9,7 @@ namespace MusicTestAPI.Common.DataTransferObjects
     public class Song:BaseMusicDTO
     {
         public int Id { get; set; }
-        public int Name { get; set; }
+        public string Name { get; set; }
         public double Duration { get; set; }
        
     }

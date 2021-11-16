@@ -21,13 +21,15 @@ public    interface IMusicItemService
 
         public OperationResult GetAll();
 
+        public OperationResult GetItemsByUser(int userId);
+
         public OperationResult AddLike(int itemIdToLike, Like likeData);
 
         public OperationResult GetLikedItems(int userId);
 
         IMapper EntityMapper { get; set; }
         IUnitOfWork UnitOfWrk { get; set; }
-        public void ConfigureServiceMappings();
+      
 
     }
 }

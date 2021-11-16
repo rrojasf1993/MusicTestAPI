@@ -61,3 +61,9 @@ C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Web\obj\Debug\net5.0\Music
 C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Web\obj\Debug\net5.0\MusicTestAPI.Web.genruntimeconfig.cache
 C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Web\bin\Debug\net5.0\Humanizer.dll
 C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Web\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Web\bin\Debug\net5.0\MusicTestAPI.Common.dll
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Web\bin\Debug\net5.0\MusicTestAPI.Services.dll
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Web\bin\Debug\net5.0\MusicTestAPI.Services.pdb
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Web\bin\Debug\net5.0\MusicTestAPI.Common.pdb
+C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Web\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

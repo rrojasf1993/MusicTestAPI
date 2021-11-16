@@ -14,6 +14,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MusicTestAPI.Data.Interfaces;
 using MusicTestAPI.Data;
+using MusicTestAPI.Services;
+using MusicTestAPI.Services.Interfaces;
+using AutoMapper;
 
 namespace MusicTestAPI.Web
 {
@@ -37,6 +40,8 @@ namespace MusicTestAPI.Web
             });
             services.AddDbContext<MusicContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MusicContext"), b => b.MigrationsAssembly("MusicTestAPI.Data")));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IMusicItemService,AlbumService>();
+            services.AddAutoMapper(typeof(Startup).Assembly, typeof(MusicTestAPI.Services.EntitiesToDTOProfile).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

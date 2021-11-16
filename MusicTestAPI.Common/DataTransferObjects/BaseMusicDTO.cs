@@ -10,6 +10,6 @@ namespace MusicTestAPI.Common.DataTransferObjects
     {
         public User Creator { get; set; }
         public bool IsPublic { get; set; }
-        public int Likes { get; set; }
+        public List<Like> Likes { get; set; }
     }
 }
