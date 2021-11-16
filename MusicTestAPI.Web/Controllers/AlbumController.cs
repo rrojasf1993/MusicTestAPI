@@ -19,13 +19,12 @@ namespace MusicTestAPI.Web.Controllers
 
         public IMusicItemService MusicItemService { get; set; }
 
-        private readonly ILogger<AlbumController> _logger;
+   
 
-        public AlbumController(IUnitOfWork uow, IMusicItemService musicItemService, ILogger<AlbumController> logger)
+        public AlbumController(IUnitOfWork uow, IMusicItemService musicItemService)
         {
             this.UnitOfWork = uow;
             this.MusicItemService = musicItemService;
-            _logger = logger;
         }
 
         [HttpPost]
