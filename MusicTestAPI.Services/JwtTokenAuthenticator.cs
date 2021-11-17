@@ -35,9 +35,22 @@ namespace MusicTestAPI.Services
             return handler.WriteToken(myToken);
         }
 
-        public override bool IsValidToken(string token)
+        public override bool IsValidToken(string tokenToValidate)
         {
-            throw new NotImplementedException();
+            bool validationResult;
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var validationParameters = (new TokenValidationParameters()
+                {
+                    ValidateLifetime = false,
+                    ValidateAudience = false,
+                    ValidateIssuer = false,
+                    ValidIssuer = "YourIssuer",
+                    ValidAudience = "YourAudience",
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(this.privateKey))
+                });
+                var principal = tokenHandler.ValidateToken(tokenToValidate, validationParameters, out SecurityToken securityToken);
+                validationResult = true;
+            return validationResult;
         }
 
         protected override void GetPrivateKey()
