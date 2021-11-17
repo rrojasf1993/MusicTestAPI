@@ -9,7 +9,7 @@ namespace MusicTestAPI.Services
 {
     public abstract class BaseTokenAuthenticator:ITokenAuthenticator
     {
-        protected readonly string privateKey;
+        protected  string privateKey;
 
         protected abstract void GetPrivateKey();
         public abstract string GenerateToken();

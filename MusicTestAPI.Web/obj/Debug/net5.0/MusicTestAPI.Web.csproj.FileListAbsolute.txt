@@ -138,3 +138,6 @@ C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Web\obj\Debug\net5
 C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Web\obj\Debug\net5.0\MusicTestAPI.Web.genruntimeconfig.cache
 C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Web\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Web\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Web\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Web\bin\Debug\net5.0\System.Web.Http.dll
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Web\bin\Debug\net5.0\Swashbuckle.Core.dll
