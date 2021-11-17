@@ -53,10 +53,10 @@ namespace MusicTestAPI.Services
                 var principal = tokenHandler.ValidateToken(tokenToValidate, validationParameters, out SecurityToken securityToken);
                 validationResult = true;
             }
-            catch (Exception)
+            catch (Exception exc)
             {
 
-                throw;
+                return false;
             }
             return validationResult;
         }
