@@ -15,6 +15,7 @@ namespace MusicTestAPI.Services
     {
         public IMapper EntityMapper { get; set; }
         public IUnitOfWork UnitOfWrk { get; set; }
+        public ITokenAuthenticator TokenAuthenticator { get; set; }
 
         public abstract OperationResult Create(User userToCreate);
 
@@ -28,9 +29,10 @@ namespace MusicTestAPI.Services
 
         public abstract bool CheckIfUserExists(User user);
        
-        public BaseUserService(IUnitOfWork unitOfWork)
+        public BaseUserService(IUnitOfWork unitOfWork, ITokenAuthenticator tokenAuthenticator)
         {
             this.UnitOfWrk = unitOfWork;
+            this.TokenAuthenticator = tokenAuthenticator;
         }
     }
 }

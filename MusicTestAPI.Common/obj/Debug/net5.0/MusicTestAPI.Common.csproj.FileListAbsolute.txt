@@ -10,3 +10,15 @@ C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Common\obj\Debug\net5.0\Mu
 C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Common\obj\Debug\net5.0\MusicTestAPI.Common.dll
 C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Common\obj\Debug\net5.0\ref\MusicTestAPI.Common.dll
 C:\Users\rober\source\repos\MusicTestAPI\MusicTestAPI.Common\obj\Debug\net5.0\MusicTestAPI.Common.pdb
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Common\bin\Debug\net5.0\MusicTestAPI.Common.deps.json
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Common\bin\Debug\net5.0\MusicTestAPI.Common.dll
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Common\bin\Debug\net5.0\ref\MusicTestAPI.Common.dll
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Common\bin\Debug\net5.0\MusicTestAPI.Common.pdb
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Common\obj\Debug\net5.0\MusicTestAPI.Common.csproj.AssemblyReference.cache
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Common\obj\Debug\net5.0\MusicTestAPI.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Common\obj\Debug\net5.0\MusicTestAPI.Common.AssemblyInfoInputs.cache
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Common\obj\Debug\net5.0\MusicTestAPI.Common.AssemblyInfo.cs
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Common\obj\Debug\net5.0\MusicTestAPI.Common.csproj.CoreCompileInputs.cache
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Common\obj\Debug\net5.0\MusicTestAPI.Common.dll
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Common\obj\Debug\net5.0\ref\MusicTestAPI.Common.dll
+C:\Users\roberto.rojas\source\repos\MusicTestAPI\MusicTestAPI.Common\obj\Debug\net5.0\MusicTestAPI.Common.pdb

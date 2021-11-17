@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicTestAPI.Services.Interfaces
 {
-    interface ITokenAuthenticator
+    public interface ITokenAuthenticator
     {
         string GenerateToken();
         bool IsValidToken(string token);

@@ -10,6 +10,7 @@ namespace MusicTestAPI.Common
     {
         Succesfull=0,
         Error=-1,
-        NotFound=2
+        NotFound=2,
+            Unauthorized=3
     }
 }

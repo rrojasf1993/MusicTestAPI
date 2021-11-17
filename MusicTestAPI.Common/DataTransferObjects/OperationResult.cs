@@ -8,9 +8,13 @@ namespace MusicTestAPI.Common.DataTransferObjects
 {
     public class OperationResult
     {
-        private string _errorMessage;
+        public OperationResult()
+        {
+            this.ErrorMessages = new List<string>();
+        }
+        private List<string> _errorMessage;
 
-        public string ErrorMessage
+        public List<string> ErrorMessages
         {
             get { return _errorMessage; }
             set { _errorMessage = value; }

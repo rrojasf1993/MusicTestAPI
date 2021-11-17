@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using MusicTestAPI.Common;
 using MusicTestAPI.Common.DataTransferObjects;
 using MusicTestAPI.Data.Interfaces;
+using MusicTestAPI.Services;
 using MusicTestAPI.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,7 @@ namespace MusicTestAPI.Web.Controllers
 
         [HttpPost]
         [Route("create-album")]
+        [TokenValidated]
         public ActionResult CreateAlbum(Album item) {
             {
                 try
@@ -41,7 +43,7 @@ namespace MusicTestAPI.Web.Controllers
                     }
                     else
                     {
-                        return BadRequest(operationResult.ErrorMessage);
+                        return BadRequest(operationResult.ErrorMessages);
                     }
                 }
                 catch (Exception exc)
@@ -52,6 +54,7 @@ namespace MusicTestAPI.Web.Controllers
        
         [HttpGet]
         [Route("public-albums")]
+        [TokenValidated()]
         public ActionResult<IEnumerable<Album>> PublicItems()
         {
             try
@@ -70,7 +73,7 @@ namespace MusicTestAPI.Web.Controllers
                     }
                     else
                     {
-                        return BadRequest(operationResult.ErrorMessage);
+                        return BadRequest(operationResult.ErrorMessages);
                     }
                 }
             }
@@ -82,6 +85,7 @@ namespace MusicTestAPI.Web.Controllers
         }
         [HttpGet()]
         [Route("my-albums")]
+        [TokenValidated()]
         public ActionResult<IEnumerable<Album>> MyItems(int userId)
         {
             try
@@ -100,7 +104,7 @@ namespace MusicTestAPI.Web.Controllers
                     }
                     else
                     {
-                        return BadRequest(operationResult.ErrorMessage);
+                        return BadRequest(operationResult.ErrorMessages);
                     }
                 }
             }
@@ -112,6 +116,7 @@ namespace MusicTestAPI.Web.Controllers
 
         [HttpGet]
         [Route("my-liked-albums")]
+        [TokenValidated()]
         public ActionResult<IEnumerable<Album>> GetMyLikedAlbums(int userId)
         {
             try
@@ -130,7 +135,7 @@ namespace MusicTestAPI.Web.Controllers
                     }
                     else
                     {
-                        return BadRequest(operationResult.ErrorMessage);
+                        return BadRequest(operationResult.ErrorMessages);
                     }
                 }
             }
@@ -143,6 +148,7 @@ namespace MusicTestAPI.Web.Controllers
 
         [HttpPost]
         [Route("like-album")]
+        [TokenValidated()]
         public ActionResult Like(int albumId, Like likeData)
         {
             try
@@ -160,7 +166,7 @@ namespace MusicTestAPI.Web.Controllers
                     }
                     else
                     {
-                        return BadRequest(operationResult.ErrorMessage);
+                        return BadRequest(operationResult.ErrorMessages);
                     }
                 }
             }
@@ -172,6 +178,7 @@ namespace MusicTestAPI.Web.Controllers
 
         [HttpDelete]
         [Route("delete-album")]
+        [TokenValidated()]
         public ActionResult DeleteAlbum(int albumId, int userId)
         {
             try
@@ -189,7 +196,7 @@ namespace MusicTestAPI.Web.Controllers
                     }
                     else
                     {
-                        return BadRequest(operationResult.ErrorMessage);
+                        return BadRequest(operationResult.ErrorMessages);
                     }
                 }
             }
@@ -202,6 +209,7 @@ namespace MusicTestAPI.Web.Controllers
 
         [HttpDelete]
         [Route("delete-my-albums")]
+        [TokenValidated()]
         public ActionResult DeleteAllAlbums(int userId)
         {
             try
@@ -219,7 +227,7 @@ namespace MusicTestAPI.Web.Controllers
                     }
                     else
                     {
-                        return BadRequest(operationResult.ErrorMessage);
+                        return BadRequest(operationResult.ErrorMessages);
                     }
                 }
             }
@@ -232,6 +240,7 @@ namespace MusicTestAPI.Web.Controllers
 
         [HttpPut]
         [Route("update-album")]
+        [TokenValidated()]
         public ActionResult UpdateAlbum(Album albumData)
         {
             try
@@ -249,7 +258,7 @@ namespace MusicTestAPI.Web.Controllers
                     }
                     else
                     {
-                        return BadRequest(operationResult.ErrorMessage);
+                        return BadRequest(operationResult.ErrorMessages);
                     }
                 }
             }

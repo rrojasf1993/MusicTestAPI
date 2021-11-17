@@ -60,7 +60,7 @@ namespace MusicTestAPI.Services
             catch (Exception exc)
             {
                 result.IsSuccesfull = false;
-                result.ErrorMessage = $"{exc.Message}\n{exc.StackTrace}";
+                result.ErrorMessages.Add($"{exc.Message}\n{exc.StackTrace}");
                 result.Result = OpCodes.Error;
             }
             return result;
@@ -101,7 +101,7 @@ namespace MusicTestAPI.Services
             catch (Exception exc)
             {
                 result.IsSuccesfull = false;
-                result.ErrorMessage = $"{exc.Message}\n{exc.StackTrace}";
+                result.ErrorMessages.Add($"{exc.Message}\n{exc.StackTrace}");
                 result.Result = OpCodes.Error;
             }
             return result;
@@ -143,7 +143,7 @@ namespace MusicTestAPI.Services
             catch (Exception exc)
             {
                 result.IsSuccesfull = false;
-                result.ErrorMessage = $"{exc.Message}\n{exc.StackTrace}";
+                result.ErrorMessages.Add($"{exc.Message}\n{exc.StackTrace}");
                 result.Result = OpCodes.Error;
             }
             return result;
@@ -170,7 +170,7 @@ namespace MusicTestAPI.Services
             
             {
                 result.IsSuccesfull = false;
-                result.ErrorMessage = $"{exc.Message}\n{exc.StackTrace}";
+                result.ErrorMessages.Add($"{exc.Message}\n{exc.StackTrace}");
                 result.Result = OpCodes.Error;
             }
             return result;
@@ -196,7 +196,7 @@ namespace MusicTestAPI.Services
             catch (Exception exc)
             {
                 result.IsSuccesfull = false;
-                result.ErrorMessage = $"{exc.Message}\n{exc.StackTrace}";
+                result.ErrorMessages.Add($"{exc.Message}\n{exc.StackTrace}");
                 result.Result = OpCodes.Error;
             }
             return result;
@@ -224,7 +224,7 @@ namespace MusicTestAPI.Services
             catch (Exception exc)
             {
                 result.IsSuccesfull = false;
-                result.ErrorMessage = $"{exc.Message}\n{exc.StackTrace}";
+                result.ErrorMessages.Add($"{exc.Message}\n{exc.StackTrace}");
                 result.Result = OpCodes.Error;
             }
             return result;
@@ -257,7 +257,7 @@ namespace MusicTestAPI.Services
             catch (Exception exc)
             {
                 result.IsSuccesfull = false;
-                result.ErrorMessage = $"{exc.Message}\n{exc.StackTrace}";
+                result.ErrorMessages.Add($"{exc.Message}\n{exc.StackTrace}");
                 result.Result = OpCodes.Error;
             }
             

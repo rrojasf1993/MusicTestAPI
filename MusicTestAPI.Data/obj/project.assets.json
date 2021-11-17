@@ -5799,27 +5799,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rober\\.nuget\\packages\\": {},
+    "C:\\Users\\roberto.rojas\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rober\\source\\repos\\MusicTestAPI\\MusicTestAPI.Data\\MusicTestAPI.Data.csproj",
+      "projectUniqueName": "C:\\Users\\roberto.rojas\\source\\repos\\MusicTestAPI\\MusicTestAPI.Data\\MusicTestAPI.Data.csproj",
       "projectName": "MusicTestAPI.Data",
-      "projectPath": "C:\\Users\\rober\\source\\repos\\MusicTestAPI\\MusicTestAPI.Data\\MusicTestAPI.Data.csproj",
-      "packagesPath": "C:\\Users\\rober\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rober\\source\\repos\\MusicTestAPI\\MusicTestAPI.Data\\obj\\",
+      "projectPath": "C:\\Users\\roberto.rojas\\source\\repos\\MusicTestAPI\\MusicTestAPI.Data\\MusicTestAPI.Data.csproj",
+      "packagesPath": "C:\\Users\\roberto.rojas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\roberto.rojas\\source\\repos\\MusicTestAPI\\MusicTestAPI.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\rober\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\roberto.rojas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -5887,7 +5885,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.7.21379.14\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
