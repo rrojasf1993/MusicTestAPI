@@ -9,9 +9,9 @@ namespace MusicTestAPI.Services.Interfaces
 {
     public interface IUserService
     {
-        public void Create(User userToCreate);
+        public OperationResult Create(User userToCreate);
 
-        public void Login(string userName, string password);
+        public OperationResult Login(string userName, string password);
 
     }
 }

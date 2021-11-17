@@ -41,6 +41,7 @@ namespace MusicTestAPI.Web
             services.AddDbContext<MusicContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MusicContext"), b => b.MigrationsAssembly("MusicTestAPI.Data")));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IMusicItemService,AlbumService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddAutoMapper(typeof(Startup).Assembly, typeof(MusicTestAPI.Services.EntitiesToDTOProfile).Assembly);
         }
 
