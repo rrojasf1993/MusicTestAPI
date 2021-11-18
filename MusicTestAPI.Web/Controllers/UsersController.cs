@@ -53,7 +53,7 @@ namespace MusicTestAPI.Web.Controllers
         [HttpPost]
         [Route("login")]
    
-        public ActionResult CreateUser(string user, string password)
+        public ActionResult LoginUser(string user, string password)
         {
             OperationResult result;
             try

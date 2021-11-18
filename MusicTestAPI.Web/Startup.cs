@@ -36,7 +36,7 @@ namespace MusicTestAPI.Web
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.OperationFilter<AddHeaderParameter>();
+                c.DocumentFilter<AuthServiceFilter>();
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MusicTestAPI.Web", Version = "v1" });
             });
             services.AddDbContext<MusicContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MusicContext"), b => b.MigrationsAssembly("MusicTestAPI.Data")));

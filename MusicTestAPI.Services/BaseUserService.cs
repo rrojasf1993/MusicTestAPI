@@ -23,7 +23,7 @@ namespace MusicTestAPI.Services
 
         public bool IsPasswordValid(string password)
         {
-            Regex passwordRegex = new Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{3, 10}$");
+            Regex passwordRegex = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{10,}$");
             return passwordRegex.IsMatch(password);
         }
 
