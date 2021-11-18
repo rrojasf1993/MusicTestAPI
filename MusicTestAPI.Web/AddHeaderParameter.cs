@@ -19,7 +19,7 @@ namespace MusicTestAPI.Web
                 Name = "jwt-token",
                 In = ParameterLocation.Header,
                 Description = "the jwt token for the request",
-                Required = true
+                Required = false
             });
         }
     }
